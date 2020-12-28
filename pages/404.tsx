@@ -9,7 +9,7 @@ export default function NotFoundPage() {
       align="middle"
       className="w-full h-screen flex"
     >
-      <Text b className="text-5xl">
+      <Text b size="3rem">
         404 Page Not Found
       </Text>
     </Row>
