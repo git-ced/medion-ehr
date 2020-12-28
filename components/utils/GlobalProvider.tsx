@@ -11,7 +11,6 @@ import { UserAgent } from 'next-useragent';
 import {
   CssBaseline,
   GeistProvider,
-  useTheme,
 } from '@geist-ui/react';
 
 // ANCHOR Graph State
@@ -19,6 +18,7 @@ import { useUserAgentHydrate } from '@medion/nodes/global/user-agent-node';
 
 // ANCHOR Utils
 import { isWebsiteRestricted } from '@medion/utils/functions/isWebsiteRestricted';
+import { THEME } from '@medion/utils/themes';
 
 interface IGlobalProviderProps {
   children?: ReactNode;
@@ -55,10 +55,9 @@ function InnerGlobalProvider({ children, userAgent }: IGlobalProviderProps) {
 
 export function GlobalProvider({ children, userAgent }: IGlobalProviderProps) {
   useUserAgentHydrate(userAgent);
-  const theme = useTheme();
 
   return (
-    <GeistProvider theme={theme}>
+    <GeistProvider theme={THEME}>
       <CssBaseline>
         <InnerGlobalProvider userAgent={userAgent}>
           {children}
