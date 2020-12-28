@@ -14,6 +14,7 @@
     "lint:utils": "eslint \"./utils/**/*.{js,ts,tsx,json}\""
   },
   "dependencies": {
+    "@geist-ui/react": "^2.1.0-canary.2",
     "@lyonph/react-hooks": "^0.2.0",
     "@next/bundle-analyzer": "^10.0.3",
     "@princedev/redact": "^1.1.0",
