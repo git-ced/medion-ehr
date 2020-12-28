@@ -1,5 +1,5 @@
 // ANCHOR React
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 // ANCHOR Next
 import dynamic from 'next/dynamic';
@@ -8,7 +8,11 @@ import dynamic from 'next/dynamic';
 import { UserAgent } from 'next-useragent';
 
 // ANCHOR Geist
-import { CssBaseline, GeistProvider } from '@geist-ui/react';
+import {
+  CssBaseline,
+  GeistProvider,
+  useTheme,
+} from '@geist-ui/react';
 
 // ANCHOR Graph State
 import { useUserAgentHydrate } from '@medion/nodes/global/user-agent-node';
@@ -51,9 +55,10 @@ function InnerGlobalProvider({ children, userAgent }: IGlobalProviderProps) {
 
 export function GlobalProvider({ children, userAgent }: IGlobalProviderProps) {
   useUserAgentHydrate(userAgent);
+  const theme = useTheme();
 
   return (
-    <GeistProvider theme={{ type: 'light' }}>
+    <GeistProvider theme={theme}>
       <CssBaseline>
         <InnerGlobalProvider userAgent={userAgent}>
           {children}
