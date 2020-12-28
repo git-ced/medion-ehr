@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "lxsmnsyc/typescript/react/next"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.eslint.json"
+  },
+  "rules": {
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "import/no-unresolved": "error",
+    "import/no-default-export": "error",
+    "import/prefer-default-export": "off",
+    "react/no-array-index-key": "off",
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "jsx-a11y/anchor-is-valid": "off"
+  }
+}
