@@ -3,7 +3,7 @@
     "lxsmnsyc/typescript/react/next"
   ],
   "parserOptions": {
-    "project": "./tsconfig.eslint.json"
+    "project": "./tsconfig.json"
   },
   "rules": {
     "@typescript-eslint/interface-name-prefix": "off",

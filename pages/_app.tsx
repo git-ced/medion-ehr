@@ -10,6 +10,10 @@ import { GraphDomain } from 'react-graph-state';
 // ANCHOR Components
 import { GlobalProvider } from '@medion/components/utils/GlobalProvider';
 
+// ANCHOR Styles
+import 'tailwindcss/tailwind.css';
+import '../public/styles/globals.css';
+
 interface AppProps {
   userAgent: UserAgent;
   err?: Error;
