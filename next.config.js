@@ -80,7 +80,7 @@ const INITIAL_CONFIG = {
 };
 
 const initialConfig = {
-  ...(INITIAL_CONFIG),
+  env: INITIAL_CONFIG,
   experimental: {
     productionBrowserSourceMaps: true,
     babelMultiThread: process.env.ENABLE_PARALLEL_BUILD,
