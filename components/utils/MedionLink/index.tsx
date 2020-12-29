@@ -14,6 +14,7 @@ interface IProps {
   icon?: boolean;
   underline?: boolean;
   block?: boolean;
+  className?: string;
   children: ReactNode;
 }
 
@@ -24,6 +25,7 @@ export function MedionLink({
   icon,
   underline,
   block,
+  className,
   children,
 }: IProps) {
   return (
@@ -34,6 +36,7 @@ export function MedionLink({
         icon={icon}
         underline={underline}
         block={block}
+        className={className}
       >
         {children}
       </Link>
