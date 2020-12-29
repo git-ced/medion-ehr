@@ -1,3 +1,6 @@
+// ANCHOR React
+import { useCallback } from 'react';
+
 // ANCHOR Nodes
 import { useAuth } from '@medion/nodes/firebase/firebase-auth-node';
 
@@ -9,17 +12,26 @@ interface IProps {
 export const useAuthSignIn = ({ email, password }: IProps) => {
   const auth = useAuth();
 
-  if (auth.status === 'success') {
-    if (auth.data.currentUser) {
-      auth.data.signOut()
-        .catch((err) => {
-          // eslint-disable-next-line no-console
-          console.error(err);
-        });
-    }
+  const call = useCallback(
+    () => {
+      if (auth.status === 'success') {
+        if (auth.data.currentUser) {
+          auth.data.signOut()
+            .catch((err) => {
+              // eslint-disable-next-line no-console
+              console.error(err);
+            });
+        }
 
-    return auth.data.signInWithEmailAndPassword(email, password);
-  }
+        auth.data.signInWithEmailAndPassword(email, password)
+          .catch((err) => {
+            // eslint-disable-next-line no-console
+            console.error(err);
+          });
+      }
+    },
+    [auth.data, auth.status, email, password],
+  );
 
-  return undefined;
+  return call;
 };

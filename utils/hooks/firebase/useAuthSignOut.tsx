@@ -1,3 +1,6 @@
+// ANCHOR React
+import { useCallback } from 'react';
+
 // ANCHOR Next
 import { useRouter } from 'next/router';
 
@@ -8,19 +11,24 @@ export const useAuthSignOut = () => {
   const router = useRouter();
   const auth = useAuth();
 
-  if (auth.status === 'success' && auth.data.currentUser) {
-    auth.data.signOut()
-      .catch((err) => {
-        // eslint-disable-next-line no-console
-        console.error(err);
-      });
+  const call = useCallback(
+    () => {
+      if (auth.status === 'success' && auth.data.currentUser) {
+        auth.data.signOut()
+          .catch((err) => {
+          // eslint-disable-next-line no-console
+            console.error(err);
+          });
 
-    router.push('/')
-      .catch((err) => {
-        // eslint-disable-next-line no-console
-        console.error(err);
-      });
-  }
+        router.push('/')
+          .catch((err) => {
+          // eslint-disable-next-line no-console
+            console.error(err);
+          });
+      }
+    },
+    [auth.data, auth.status, router],
+  );
 
-  return undefined;
+  return call;
 };
