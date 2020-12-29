@@ -16,3 +16,16 @@
   height: 12px !important;
   margin: 0 3px !important;
 }
+
+.no-border > .input-wrapper {
+  border: 0 !important;
+}
+
+.minimal {
+  color: #1e67ba !important;
+}
+
+input::placeholder {
+  color: #1e67ba !important;
+  opacity: 0.8 !important;
+}

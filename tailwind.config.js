@@ -7,6 +7,12 @@ module.exports = {
         'montserrat': ['Montserrat', 'sans-serif'],
         'poppins': ['Poppins', 'sans-serif'],
       },
+      borderRadius: {
+        DEFAULT: '15px',
+      },
+      backgroundColor: {
+        'main': '#FAFAFA'
+      }
     },
     
   },
