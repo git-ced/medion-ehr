@@ -4,7 +4,7 @@ import { Col } from '@geist-ui/react';
 // ANCHOR Components
 import { constant } from '../Constant';
 import { NavbarCenter } from './NavbarCenter';
-import { NavbarContainer } from './NavbarContainer';
+import { NavbarContainer } from '../NavbarContainer';
 import { NavbarLeft } from './NavbarLeft';
 import { NavbarRight } from './NavbarRight';
 
