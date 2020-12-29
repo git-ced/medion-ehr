@@ -29,3 +29,26 @@ input::placeholder {
   color: #1e67ba !important;
   opacity: 0.8 !important;
 }
+
+.sidebar {
+  width: calc(352px - 6rem);
+  height: calc(100vh - 13rem);
+  @apply px-8 py-8 mr-8 rounded shadow fixed;
+}
+
+.w-left {
+  width: 352px;
+}
+
+.w-right {
+  width: calc(100% - 352px);
+}
+
+.navbar {
+  width: calc(100% - 4rem);
+  @apply h-20 px-8 flex items-center rounded-b shadow fixed;
+}
+
+.main {
+  @apply mt-20 px-8 py-8 flex justify-center;
+}
