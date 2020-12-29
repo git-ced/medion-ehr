@@ -8,14 +8,18 @@ import { useGraphNodeValue } from 'react-graph-state';
 // ANCHOR Nodes
 import { firebaseAppNode } from './firebase-app-node';
 
-export const firebaseAuthNode = createGraphNode<Promise<firebase.auth.Auth>>({
+export const firebaseAuthNode = createGraphNode<Promise<firebase.auth.Auth | undefined>>({
   key: 'firebase-auth',
   get: async ({ get }) => {
     const app = await get(firebaseAppNode);
 
-    await import('firebase/auth');
+    if (app) {
+      await import('firebase/auth');
 
-    return app.auth();
+      return app.auth();
+    }
+
+    return undefined;
   },
 });
 

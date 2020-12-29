@@ -13,7 +13,9 @@ export const authStateNode = createGraphNode<firebase.User | undefined | null>({
   get: ({ get, mutateSelf, subscription }) => {
     get(firebaseAuthNode)
       .then((auth) => {
-        subscription(() => auth.onAuthStateChanged(mutateSelf));
+        if (auth) {
+          subscription(() => auth.onAuthStateChanged(mutateSelf));
+        }
       })
       .catch((err) => {
         // eslint-disable-next-line no-console
