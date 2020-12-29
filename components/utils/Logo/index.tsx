@@ -5,14 +5,7 @@ import { memo } from 'react';
 import NextImage from 'next/image';
 
 // ANCHOR Constants
-import {
-  HOMEPAGE_URL,
-  LOGO_ALT,
-  LOGO_SOURCE,
-} from '@medion/utils/constants';
-
-// ANCHOR Components
-import { MedionLink } from '../MedionLink';
+import { LOGO_ALT, LOGO_SOURCE } from '@medion/utils/constants';
 
 interface IProps {
   width?: string | number;
@@ -25,15 +18,13 @@ export const Logo = memo(
     height = 'auto',
   }: IProps) => (
     <div className="content-center justify-center">
-      <MedionLink href={HOMEPAGE_URL}>
-        <NextImage
-          src={LOGO_SOURCE}
-          alt={LOGO_ALT}
-          width={width}
-          height={height}
-          loading="eager"
-        />
-      </MedionLink>
+      <NextImage
+        src={LOGO_SOURCE}
+        alt={LOGO_ALT}
+        width={width}
+        height={height}
+        loading="eager"
+      />
     </div>
   ),
 );

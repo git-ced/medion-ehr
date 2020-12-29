@@ -1,16 +1,17 @@
 // ANCHOR Geist
-import { Row, Spacer, Text } from '@geist-ui/react';
+import { Spacer, Text } from '@geist-ui/react';
 
 // ANCHOR Components
 import { constant } from '@medion/components/utils/Constant';
 import { Logo } from '@medion/components/utils/Logo';
+import { MedionLink } from '@medion/components/utils/MedionLink';
 
 // ANCHOR Constants
-import { LOGO_ALT } from '@medion/utils/constants';
+import { HOMEPAGE_URL, LOGO_ALT } from '@medion/utils/constants';
 
 export const NavbarLeft = constant(
   () => (
-    <Row className="flex items-center">
+    <MedionLink href={HOMEPAGE_URL} className="flex items-center">
       <Logo width="64px" height="64px" />
       <Spacer x={0.5} />
       <div className="flex flex-col justify-center">
@@ -22,6 +23,6 @@ export const NavbarLeft = constant(
           Las Pinas Doctors
         </Text> */}
       </div>
-    </Row>
+    </MedionLink>
   ),
 );
