@@ -33,7 +33,7 @@ input::placeholder {
 .sidebar {
   width: calc(352px - 6rem);
   height: calc(100vh - 13rem);
-  @apply px-8 py-8 mr-8 rounded shadow fixed;
+  @apply px-5 py-8 mr-8 rounded shadow fixed;
 }
 
 .w-left {
