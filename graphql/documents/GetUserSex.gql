@@ -1,0 +1,5 @@
+query GetUserSex {
+  user_sex {
+    value
+  }
+}
