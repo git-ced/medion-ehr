@@ -1,0 +1,5 @@
+query GetHospitalStatus {
+  hospital_status {
+    value
+  }
+}
