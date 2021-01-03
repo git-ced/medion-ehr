@@ -2,13 +2,14 @@
 import { GraphQLClient } from 'graphql-request';
 import { getSdk } from '@medion/graphql/types';
 
-const ENDPOINT = 'https://medion.hasura.app/v1/graphql';
+// ANCHOR Config
+import { HASURA_ENDPOINT, HASURA_SECRET } from '../config/hasura';
 
-const client = new GraphQLClient(ENDPOINT, {
+const client = new GraphQLClient(HASURA_ENDPOINT, {
   headers: {
     'content-type': 'application/json',
     'Accept-Encoding': 'br, gzip',
-    'x-hasura-admin-secret': process.env.HASURA_ADMIN_SECRET ?? '',
+    'x-hasura-admin-secret': HASURA_SECRET,
   },
 });
 
