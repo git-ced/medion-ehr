@@ -38,6 +38,9 @@
       "@medion/nodes/*": [
         "nodes/*"
       ],
+      "@medion/graphql/*": [
+        "graphql/*"
+      ]
     },
   },
   "exclude": [
